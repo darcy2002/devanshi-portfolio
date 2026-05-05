@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Syne, DM_Mono, Bricolage_Grotesque } from 'next/font/google';
+import { Outfit, DM_Mono, Bricolage_Grotesque } from 'next/font/google';
 import './globals.css';
 import Cursor from '@/components/Cursor';
 import Background from '@/components/Background';
 
-const syne = Syne({
+const syne = Outfit({
   subsets: ['latin'],
   weight: ['700', '800'],
   variable: '--font-syne',
