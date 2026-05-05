@@ -262,11 +262,11 @@ function MfeDiagram() {
         margin: '16px 0',
       }}
     >
-      <MfeBox span2>Shell App (React)</MfeBox>
-      <MfeBox>Student Dashboard</MfeBox>
-      <MfeBox>Admin Panel</MfeBox>
-      <MfeBox>Course Tracker</MfeBox>
-      <MfeBox>AI Alerts</MfeBox>
+      <MfeBox span2>Shell App — 24 MFEs</MfeBox>
+      <MfeBox>RBAC Manager</MfeBox>
+      <MfeBox>Communities</MfeBox>
+      <MfeBox>Analytics</MfeBox>
+      <MfeBox>Retention ✦</MfeBox>
     </div>
   );
 }
@@ -441,7 +441,7 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        {/* ── CARD 3: Student Retention Platform ── */}
+        {/* ── CARD 3: Unified Student Management Platform ── */}
         <motion.div
           variants={card}
           className="project-card"
@@ -454,12 +454,68 @@ export default function Projects() {
           }}
         >
           <CardNumber n="03" />
-          <CardTag>MFE · AI · Production</CardTag>
-          <CardTitle>Student Retention Platform</CardTitle>
+          <CardTag>24 MFEs · RBAC · Production</CardTag>
+          <CardTitle>Unified Student Management Platform</CardTitle>
           <CardDesc>
-            Micro Frontend architecture with AI dropout prediction — flags at-risk
-            students 4–6 weeks before dropout.
+            A unified student and admin portal built on 24 Micro Frontends under a
+            single shell, powered by a centralised RBAC permission manager. Super
+            admins grant granular module-level and action-level permissions per user
+            via a checkbox-driven roles UI — dynamically assigning student, admin, or
+            super admin access across the platform.
           </CardDesc>
+
+          {/* Modules */}
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 20 }}>
+            {[
+              'Communities',
+              'Drive',
+              'Analytics',
+              'Activities',
+              'Multi-campus Map',
+              'Student Attendance',
+              'Events & Announcements',
+            ].map((m) => (
+              <span
+                key={m}
+                style={{
+                  fontFamily: 'var(--font-dm-mono)',
+                  fontSize: 9,
+                  textTransform: 'uppercase',
+                  padding: '3px 10px',
+                  background: 'var(--accent-dim)',
+                  color: 'var(--accent)',
+                }}
+              >
+                {m}
+              </span>
+            ))}
+            <span
+              style={{
+                fontFamily: 'var(--font-dm-mono)',
+                fontSize: 9,
+                textTransform: 'uppercase',
+                padding: '3px 10px',
+                background: 'var(--accent-dim)',
+                color: 'var(--accent)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 6,
+              }}
+            >
+              <span
+                style={{
+                  width: 5,
+                  height: 5,
+                  borderRadius: '50%',
+                  background: 'var(--green)',
+                  animation: 'dot-blink 1.5s ease-in-out infinite',
+                  flexShrink: 0,
+                }}
+              />
+              Retention (in progress)
+            </span>
+          </div>
+
           <MfeDiagram />
           <div style={{ display: 'flex', gap: 24, marginBottom: 20 }}>
             <Metric val="38%" label="Fewer false positives" />
