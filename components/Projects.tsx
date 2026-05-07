@@ -496,7 +496,7 @@ export default function Projects() {
             ))}
           </div>
           <div style={{ display: 'flex', gap: 8 }}>
-            <CardButton href="#" variant="github">GitHub ↗</CardButton>
+            <CardButton href="https://github.com/darcy2002/devanshi-support-agent" variant="github">GitHub ↗</CardButton>
           </div>
         </motion.div>
 
