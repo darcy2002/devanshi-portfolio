@@ -635,7 +635,7 @@ export default function Projects() {
             <CardTag>AI · Next.js · Gemini</CardTag>
             <CardTitle>Resume × JD Analyzer</CardTitle>
             <CardDesc>
-              {'Upload your resume, paste a job description. Get a match score, missing keywords, rewritten bullets, and a cover letter — free, no login, no API key needed.'}
+              {'Upload your resume, paste a job description. Get a match score, ATS compatibility score, missing keywords, rewritten bullets with diff editor, re-score after edits, and a tone-adjustable cover letter — free, no login, no API key needed.'}
             </CardDesc>
             <div style={{ display: 'flex', gap: 24, marginBottom: 20 }}>
               <Metric val="82" label="Avg match score" />
