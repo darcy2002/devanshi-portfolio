@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-const links = ['Work', 'About', 'Writing', 'Contact'];
+const links = ['Work', 'About', 'Now', 'Contact'];
 
 export default function Nav() {
   const [time, setTime] = useState('00:00:00');

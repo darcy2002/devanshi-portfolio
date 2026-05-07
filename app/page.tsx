@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import StackStrip from '@/components/StackStrip';
 import Projects from '@/components/Projects';
 import About from '@/components/About';
+import Now from '@/components/Now';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <StackStrip />
       <Projects />
       <About />
+      <Now />
       <Footer />
     </main>
   );
