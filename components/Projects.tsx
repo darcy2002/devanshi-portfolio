@@ -466,7 +466,7 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        {/* ── CARD 2: Devanshi's Agent ── */}
+        {/* ── CARD 2: Unified Student Management Platform ── */}
         <motion.div
           variants={card}
           className="project-card"
@@ -479,40 +479,6 @@ export default function Projects() {
           }}
         >
           <CardNumber n="02" />
-          <CardTag>Voice AI · ElevenLabs</CardTag>
-          <CardTitle>{"Devanshi's Agent"}</CardTitle>
-          <CardDesc>
-            A voice AI that attends calls in my voice when unavailable. Transcribes
-            live, delivers summaries in 30 seconds.
-          </CardDesc>
-          <Waveform />
-          <div style={{ display: 'flex', gap: 24, marginBottom: 20 }}>
-            <Metric val="<800ms" label="Voice latency" />
-            <Metric val="30s" label="Summary delivery" />
-          </div>
-          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
-            {['ElevenLabs', 'React', 'Node.js', 'SSE'].map((t) => (
-              <StackTag key={t}>{t}</StackTag>
-            ))}
-          </div>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <CardButton href="https://github.com/darcy2002/devanshi-support-agent" variant="github">GitHub ↗</CardButton>
-          </div>
-        </motion.div>
-
-        {/* ── CARD 3: Unified Student Management Platform ── */}
-        <motion.div
-          variants={card}
-          className="project-card"
-          style={cardStyle}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLDivElement).style.background = 'var(--surface)';
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLDivElement).style.background = 'var(--bg)';
-          }}
-        >
-          <CardNumber n="03" />
           <CardTag>24 MFEs · RBAC · Production</CardTag>
           <CardTitle>Unified Student Management Platform</CardTitle>
           <CardDesc>
@@ -612,17 +578,11 @@ export default function Projects() {
           </span>
         </motion.div>
 
-        {/* ── CARD 4: Resume × JD Analyzer ── */}
+        {/* ── CARD 3: Resume × JD Analyzer ── */}
         <motion.div
           variants={card}
-          className="project-card featured-card"
-          style={{
-            ...cardStyle,
-            gridColumn: 'span 2',
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: 48,
-          }}
+          className="project-card"
+          style={cardStyle}
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLDivElement).style.background = 'var(--surface)';
           }}
@@ -630,30 +590,60 @@ export default function Projects() {
             (e.currentTarget as HTMLDivElement).style.background = 'var(--bg)';
           }}
         >
-          <div>
-            <CardNumber n="04" />
-            <CardTag>AI · Next.js · Gemini</CardTag>
-            <CardTitle>Resume × JD Analyzer</CardTitle>
-            <CardDesc>
-              {'Upload your resume, paste a job description. Get a match score, ATS compatibility score, missing keywords, rewritten bullets with diff editor, re-score after edits, and a tone-adjustable cover letter — free, no login, no API key needed.'}
-            </CardDesc>
-            <div style={{ display: 'flex', gap: 24, marginBottom: 20 }}>
-              <Metric val="82" label="Avg match score" />
-              <Metric val="30s" label="Full analysis" />
-              <Metric val="0" label="Cost to user" />
-            </div>
-            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
-              {['Next.js', 'Gemini API', 'Node.js', 'Tailwind'].map((t) => (
-                <StackTag key={t}>{t}</StackTag>
-              ))}
-            </div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <CardButton href="https://resume-jd-analyzer-ochre.vercel.app/" variant="live">Live →</CardButton>
-              <CardButton href="https://github.com/darcy2002/Resume-Analyzer" variant="github">GitHub ↗</CardButton>
-            </div>
+          <CardNumber n="03" />
+          <CardTag>AI · Next.js · Gemini</CardTag>
+          <CardTitle>Resume × JD Analyzer</CardTitle>
+          <CardDesc>
+            {'Upload your resume, paste a job description. Get a match score, ATS compatibility score, missing keywords, rewritten bullets with diff editor, re-score after edits, and a tone-adjustable cover letter — free, no login, no API key needed.'}
+          </CardDesc>
+          <ScoreDisplay />
+          <div style={{ display: 'flex', gap: 24, marginBottom: 20 }}>
+            <Metric val="82" label="Avg match score" />
+            <Metric val="30s" label="Full analysis" />
+            <Metric val="0" label="Cost to user" />
           </div>
-          <div>
-            <ScoreDisplay />
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
+            {['Next.js', 'Gemini API', 'Node.js', 'Tailwind'].map((t) => (
+              <StackTag key={t}>{t}</StackTag>
+            ))}
+          </div>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <CardButton href="https://resume-jd-analyzer-ochre.vercel.app/" variant="live">Live →</CardButton>
+            <CardButton href="https://github.com/darcy2002/Resume-Analyzer" variant="github">GitHub ↗</CardButton>
+          </div>
+        </motion.div>
+
+        {/* ── CARD 4: Devanshi's Agent ── */}
+        <motion.div
+          variants={card}
+          className="project-card featured-card"
+          style={{ ...cardStyle, gridColumn: 'span 2' }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLDivElement).style.background = 'var(--surface)';
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLDivElement).style.background = 'var(--bg)';
+          }}
+        >
+          <CardNumber n="04" />
+          <CardTag>Voice AI · ElevenLabs</CardTag>
+          <CardTitle>{"Devanshi's Agent"}</CardTitle>
+          <CardDesc>
+            A voice AI that attends calls in my voice when unavailable. Transcribes
+            live, delivers summaries in 30 seconds.
+          </CardDesc>
+          <Waveform />
+          <div style={{ display: 'flex', gap: 24, marginBottom: 20 }}>
+            <Metric val="<800ms" label="Voice latency" />
+            <Metric val="30s" label="Summary delivery" />
+          </div>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
+            {['ElevenLabs', 'React', 'Node.js', 'SSE'].map((t) => (
+              <StackTag key={t}>{t}</StackTag>
+            ))}
+          </div>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <CardButton href="https://github.com/darcy2002/devanshi-support-agent" variant="github">GitHub ↗</CardButton>
           </div>
         </motion.div>
       </motion.div>
