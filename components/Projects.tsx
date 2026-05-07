@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import TerminalWindow from './TerminalWindow';
 import type { TermLine } from './TerminalWindow';
@@ -183,6 +184,35 @@ function Metric({ val, label }: { val: string; label: string }) {
   );
 }
 
+function CardButton({ href, children, variant }: { href: string; children: string; variant: 'live' | 'github' }) {
+  const [hovered, setHovered] = useState(false);
+  const base: React.CSSProperties = {
+    fontFamily: 'var(--font-dm-mono)',
+    fontSize: 10,
+    padding: '4px 10px',
+    cursor: 'pointer',
+    textDecoration: 'none',
+    display: 'inline-block',
+    opacity: hovered ? 0.8 : 1,
+    transition: 'opacity 0.2s',
+    borderRadius: 0,
+  };
+  const live: React.CSSProperties = { background: 'var(--accent)', color: '#000', border: 'none' };
+  const github: React.CSSProperties = { background: 'transparent', color: 'var(--muted)', border: '1px solid var(--border)' };
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ ...base, ...(variant === 'live' ? live : github) }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {children}
+    </a>
+  );
+}
+
 function StackTag({ children }: { children: string }) {
   return (
     <span
@@ -196,6 +226,29 @@ function StackTag({ children }: { children: string }) {
     >
       {children}
     </span>
+  );
+}
+
+/* ── Resume Analyzer Score Visual ── */
+function ScoreDisplay() {
+  return (
+    <div
+      style={{
+        background: 'rgba(0,0,0,0.3)',
+        border: '1px solid var(--border)',
+        padding: 16,
+        margin: '20px 0',
+        fontFamily: 'var(--font-dm-mono)',
+        fontSize: 10,
+        lineHeight: 1.8,
+      }}
+    >
+      <div style={{ color: 'var(--muted)', marginBottom: 6 }}>$ analyze --resume cv.pdf --jd job.txt</div>
+      <div style={{ color: 'var(--accent)' }}>✓ Match Score: 82%</div>
+      <div style={{ color: 'var(--muted)' }}>→ Missing keywords: &quot;TypeScript&quot;, &quot;CI/CD&quot;</div>
+      <div style={{ color: 'var(--muted)' }}>→ Rewriting 3 bullet points...</div>
+      <div style={{ color: 'var(--green)' }}>→ Cover letter generated in 28s</div>
+    </div>
   );
 }
 
@@ -342,7 +395,7 @@ export default function Projects() {
             color: 'var(--muted)',
           }}
         >
-          03 projects
+          04 projects
         </span>
       </div>
 
@@ -392,10 +445,13 @@ export default function Projects() {
               <Metric val="<2s" label="Response time" />
               <Metric val="4" label="Tool stages" />
             </div>
-            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
               {['Node.js', 'Claude API', 'MCP', 'Telegram Bot API'].map((t) => (
                 <StackTag key={t}>{t}</StackTag>
               ))}
+            </div>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <CardButton href="https://github.com/darcy2002/swigzy" variant="github">GitHub ↗</CardButton>
             </div>
           </div>
           <div>
@@ -434,10 +490,13 @@ export default function Projects() {
             <Metric val="<800ms" label="Voice latency" />
             <Metric val="30s" label="Summary delivery" />
           </div>
-          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
             {['ElevenLabs', 'React', 'Node.js', 'SSE'].map((t) => (
               <StackTag key={t}>{t}</StackTag>
             ))}
+          </div>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <CardButton href="#" variant="github">GitHub ↗</CardButton>
           </div>
         </motion.div>
 
@@ -521,10 +580,80 @@ export default function Projects() {
             <Metric val="38%" label="Fewer false positives" />
             <Metric val="4–6wk" label="Early warning" />
           </div>
-          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
             {['React', 'Webpack MF', 'Node.js', 'PostgreSQL'].map((t) => (
               <StackTag key={t}>{t}</StackTag>
             ))}
+          </div>
+          <span
+            style={{
+              fontFamily: 'var(--font-dm-mono)',
+              fontSize: 9,
+              color: 'var(--green)',
+              border: '1px solid var(--green)',
+              padding: '3px 10px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 6,
+              opacity: 0.75,
+            }}
+          >
+            <span
+              style={{
+                width: 5,
+                height: 5,
+                borderRadius: '50%',
+                background: 'var(--green)',
+                animation: 'dot-blink 1.5s ease-in-out infinite',
+                flexShrink: 0,
+              }}
+            />
+            Production · EXC Managed Services
+          </span>
+        </motion.div>
+
+        {/* ── CARD 4: Resume × JD Analyzer ── */}
+        <motion.div
+          variants={card}
+          className="project-card featured-card"
+          style={{
+            ...cardStyle,
+            gridColumn: 'span 2',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 48,
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLDivElement).style.background = 'var(--surface)';
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLDivElement).style.background = 'var(--bg)';
+          }}
+        >
+          <div>
+            <CardNumber n="04" />
+            <CardTag>AI · Next.js · Gemini</CardTag>
+            <CardTitle>Resume × JD Analyzer</CardTitle>
+            <CardDesc>
+              {'Upload your resume, paste a job description. Get a match score, missing keywords, rewritten bullets, and a cover letter — free, no login, no API key needed.'}
+            </CardDesc>
+            <div style={{ display: 'flex', gap: 24, marginBottom: 20 }}>
+              <Metric val="82" label="Avg match score" />
+              <Metric val="30s" label="Full analysis" />
+              <Metric val="0" label="Cost to user" />
+            </div>
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
+              {['Next.js', 'Gemini API', 'Node.js', 'Tailwind'].map((t) => (
+                <StackTag key={t}>{t}</StackTag>
+              ))}
+            </div>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <CardButton href="https://resume-jd-analyzer-ochre.vercel.app/" variant="live">Live →</CardButton>
+              <CardButton href="https://github.com/darcy2002/Resume-Analyzer" variant="github">GitHub ↗</CardButton>
+            </div>
+          </div>
+          <div>
+            <ScoreDisplay />
           </div>
         </motion.div>
       </motion.div>
