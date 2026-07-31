@@ -3,8 +3,7 @@
 const links = [
   { label: 'GitHub', href: 'https://github.com/darcy2002' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/devanshi-garg-881000203/' },
-  { label: 'Resume', href: '#' },
-  { label: 'Twitter', href: '#' },
+  { label: 'Email', href: 'mailto:devanshigarg2002@gmail.com' },
 ];
 
 export default function Footer() {
@@ -120,7 +119,7 @@ export default function Footer() {
           opacity: 0.5,
         }}
       >
-        © 2025 Devanshi Garg. Built with Next.js + Tailwind + Framer Motion.
+        © 2026 Devanshi Garg. Built with Next.js + Tailwind + Framer Motion.
       </p>
     </section>
   );
