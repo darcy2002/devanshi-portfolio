@@ -50,7 +50,7 @@ const heroLines: TermLine[] = [
     delay: 120,
     content: (
       <span style={{ color: 'var(--green)' }}>
-        {'SwigZy ............. [LLM+MCP]  ✓'}
+        {'Pinged ............. [Full-Stack] ✓ ★'}
       </span>
     ),
   },
@@ -58,7 +58,7 @@ const heroLines: TermLine[] = [
     delay: 120,
     content: (
       <span style={{ color: 'var(--green)' }}>
-        {"Devanshi's Agent ... [Voice AI] ✓"}
+        {'Sketchd ............ [Vision AI]  ✓'}
       </span>
     ),
   },
@@ -66,7 +66,31 @@ const heroLines: TermLine[] = [
     delay: 120,
     content: (
       <span style={{ color: 'var(--green)' }}>
-        {'Student Platform ... [MFE+AI]   ✓'}
+        {'Dossi .............. [Research]   ✓'}
+      </span>
+    ),
+  },
+  {
+    delay: 120,
+    content: (
+      <span style={{ color: 'var(--green)' }}>
+        {'SwigZy ............. [LLM+MCP]    ✓'}
+      </span>
+    ),
+  },
+  {
+    delay: 120,
+    content: (
+      <span style={{ color: 'var(--green)' }}>
+        {'Student Platform ... [MFE+RBAC]  ✓'}
+      </span>
+    ),
+  },
+  {
+    delay: 120,
+    content: (
+      <span style={{ color: 'var(--green)' }}>
+        {"Devanshi's Agent ... [Voice AI]  ✓"}
       </span>
     ),
   },
