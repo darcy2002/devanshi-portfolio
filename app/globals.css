@@ -138,6 +138,9 @@ body::after {
   .hero-grid { grid-template-columns: 1fr !important; padding: 100px 24px 60px !important; }
   .projects-grid { grid-template-columns: 1fr !important; }
   .featured-card { grid-column: span 1 !important; grid-template-columns: 1fr !important; }
+  .flagship-card { grid-template-columns: 1fr !important; padding: 32px 24px !important; gap: 32px !important; }
+  .sketchd-mock { grid-template-columns: 1fr !important; }
+  .dossi-split { grid-template-columns: 1fr !important; }
   .about-grid { grid-template-columns: 1fr !important; }
   .footer-section { padding: 60px 24px !important; }
   .nav-bar { padding: 16px 24px !important; }
