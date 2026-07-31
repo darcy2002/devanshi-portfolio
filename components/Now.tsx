@@ -17,7 +17,7 @@ const nowLines: TermLine[] = [
     content: (
       <span>
         <span style={{ color: 'var(--muted)' }}>{'  building .................. '}</span>
-        <span style={{ color: 'var(--green)' }}>Sketchd</span>
+        <span style={{ color: 'var(--green)' }}>Huddle</span>
       </span>
     ),
   },
@@ -25,7 +25,7 @@ const nowLines: TermLine[] = [
     delay: 100,
     content: (
       <span style={{ color: 'var(--muted)' }}>
-        {'  └─ sketch-to-code tool, split-screen,'}
+        {'  └─ live meeting copilot — your Claude/OpenAI'}
       </span>
     ),
   },
@@ -33,7 +33,7 @@ const nowLines: TermLine[] = [
     delay: 100,
     content: (
       <span style={{ color: 'var(--muted)' }}>
-        {'     pencil drawing → live React/Tailwind'}
+        {'     context, live answers from speech-to-text'}
       </span>
     ),
   },
@@ -101,7 +101,7 @@ const nowLines: TermLine[] = [
     content: (
       <span>
         <span style={{ color: 'var(--muted)' }}>{'  last updated .............. '}</span>
-        <span style={{ color: 'var(--green)' }}>May 2026</span>
+        <span style={{ color: 'var(--green)' }}>Jul 2026</span>
       </span>
     ),
   },
